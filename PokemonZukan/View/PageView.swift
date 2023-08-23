@@ -1,21 +1,19 @@
 import SwiftUI
 
 struct PageView: View {
-    let text: String
-    
-    init(text: String) {
-        print("init\(text)")
-        self.text = text
-    }
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        Text(text)
-            .font(.system(size: 450))
+        List {
+            ForEach(viewModel.pokemons, id: \.id) { pokemon in
+                PokemonRow(viewModel: .init(pokemon: pokemon))
+            }
+        }
     }
 }
 
 struct PageView_Previews: PreviewProvider {
     static var previews: some View {
-        PageView(text: "1")
+        PageView(viewModel: .init(page: 0))
     }
 }

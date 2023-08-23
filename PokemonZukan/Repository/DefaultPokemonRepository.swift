@@ -3,7 +3,7 @@ import Foundation
 
 
 protocol PokemonRepository {
-    func getPokemon(at startIndex: Int, to endIndex: Int) -> AnyPublisher<[Pokemon], Error>
+    func getPokemon(limit: Int, offset: Int) -> AnyPublisher<[Pokemon], Error>
 }
 
 class DefaultPokemonRepository: PokemonRepository {
@@ -13,8 +13,12 @@ class DefaultPokemonRepository: PokemonRepository {
         self.http = http
     }
     
-    func getPokemon(at startIndex: Int, to endIndex: Int) -> AnyPublisher<[Pokemon], Error> {
-        return Future { $0(.success([])) }
+    func getPokemon(limit: Int, offset: Int) -> AnyPublisher<[Pokemon], Error> {
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=\(limit)&offset=\(offset)")
+        let request = URLRequest(url: url!)
+        return http.executeRequest(request)
+            .decode(type: PokeAPIResponse.self, decoder: JSONDecoder())
+            .map { $0.results }
             .eraseToAnyPublisher()
     }
 }

@@ -2,8 +2,8 @@
 
 extension Pokemon {
     static func fixture(
-        id: Int = 0
+        name: String = ""
     ) -> Pokemon {
-        return Pokemon(id: id)
+        return Pokemon(name: name)
     }
 }
