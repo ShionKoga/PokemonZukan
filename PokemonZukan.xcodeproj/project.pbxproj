@@ -11,7 +11,14 @@
 		11C3B22D2A94E15C00C49CA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3B22C2A94E15C00C49CA3 /* ContentView.swift */; };
 		11C3B22F2A94E15E00C49CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C3B22E2A94E15E00C49CA3 /* Assets.xcassets */; };
 		11C3B2322A94E15E00C49CA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C3B2312A94E15E00C49CA3 /* Preview Assets.xcassets */; };
-		11C3B23C2A94E15E00C49CA3 /* PokemonZukanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3B23B2A94E15E00C49CA3 /* PokemonZukanTests.swift */; };
+		11C3B23C2A94E15E00C49CA3 /* ContentVIewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3B23B2A94E15E00C49CA3 /* ContentVIewModelTests.swift */; };
+		11C3B2552A94E4F700C49CA3 /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3B2542A94E4F700C49CA3 /* ContentView+ViewModel.swift */; };
+		11C3B25B2A94E64800C49CA3 /* DefaultPokemonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3B25A2A94E64800C49CA3 /* DefaultPokemonRepository.swift */; };
+		11C3B25E2A94E6E500C49CA3 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3B25D2A94E6E500C49CA3 /* Pokemon.swift */; };
+		11C3B2602A94E7DD00C49CA3 /* NetworkHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3B25F2A94E7DD00C49CA3 /* NetworkHttp.swift */; };
+		11C3B2652A94E96400C49CA3 /* Pokemon+fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3B2642A94E96400C49CA3 /* Pokemon+fixture.swift */; };
+		11C3B2682A94E9E800C49CA3 /* PokemonRepositoryDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3B2672A94E9E800C49CA3 /* PokemonRepositoryDoubles.swift */; };
+		11C3B26A2A94EFFC00C49CA3 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C3B2692A94EFFC00C49CA3 /* PageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +38,14 @@
 		11C3B22E2A94E15E00C49CA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11C3B2312A94E15E00C49CA3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		11C3B2372A94E15E00C49CA3 /* PokemonZukanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonZukanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		11C3B23B2A94E15E00C49CA3 /* PokemonZukanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonZukanTests.swift; sourceTree = "<group>"; };
+		11C3B23B2A94E15E00C49CA3 /* ContentVIewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVIewModelTests.swift; sourceTree = "<group>"; };
+		11C3B2542A94E4F700C49CA3 /* ContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModel.swift"; sourceTree = "<group>"; };
+		11C3B25A2A94E64800C49CA3 /* DefaultPokemonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPokemonRepository.swift; sourceTree = "<group>"; };
+		11C3B25D2A94E6E500C49CA3 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		11C3B25F2A94E7DD00C49CA3 /* NetworkHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttp.swift; sourceTree = "<group>"; };
+		11C3B2642A94E96400C49CA3 /* Pokemon+fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pokemon+fixture.swift"; sourceTree = "<group>"; };
+		11C3B2672A94E9E800C49CA3 /* PokemonRepositoryDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRepositoryDoubles.swift; sourceTree = "<group>"; };
+		11C3B2692A94EFFC00C49CA3 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +87,12 @@
 		11C3B2292A94E15C00C49CA3 /* PokemonZukan */ = {
 			isa = PBXGroup;
 			children = (
+				11C3B25C2A94E6DC00C49CA3 /* Model */,
+				11C3B2592A94E62800C49CA3 /* Repository */,
+				11C3B2582A94E62100C49CA3 /* Http */,
+				11C3B2572A94E61C00C49CA3 /* View */,
+				11C3B2562A94E61400C49CA3 /* ViewModel */,
 				11C3B22A2A94E15C00C49CA3 /* PokemonZukanApp.swift */,
-				11C3B22C2A94E15C00C49CA3 /* ContentView.swift */,
 				11C3B22E2A94E15E00C49CA3 /* Assets.xcassets */,
 				11C3B2302A94E15E00C49CA3 /* Preview Content */,
 			);
@@ -92,9 +110,84 @@
 		11C3B23A2A94E15E00C49CA3 /* PokemonZukanTests */ = {
 			isa = PBXGroup;
 			children = (
-				11C3B23B2A94E15E00C49CA3 /* PokemonZukanTests.swift */,
+				11C3B2632A94E95600C49CA3 /* Model */,
+				11C3B2622A94E95100C49CA3 /* ViewModel */,
+				11C3B2612A94E94700C49CA3 /* Repository */,
 			);
 			path = PokemonZukanTests;
+			sourceTree = "<group>";
+		};
+		11C3B2562A94E61400C49CA3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11C3B2542A94E4F700C49CA3 /* ContentView+ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		11C3B2572A94E61C00C49CA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11C3B22C2A94E15C00C49CA3 /* ContentView.swift */,
+				11C3B2692A94EFFC00C49CA3 /* PageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11C3B2582A94E62100C49CA3 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				11C3B25F2A94E7DD00C49CA3 /* NetworkHttp.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		11C3B2592A94E62800C49CA3 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				11C3B25A2A94E64800C49CA3 /* DefaultPokemonRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		11C3B25C2A94E6DC00C49CA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11C3B25D2A94E6E500C49CA3 /* Pokemon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11C3B2612A94E94700C49CA3 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				11C3B2662A94E9CF00C49CA3 /* Doubles */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		11C3B2622A94E95100C49CA3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				11C3B23B2A94E15E00C49CA3 /* ContentVIewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		11C3B2632A94E95600C49CA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11C3B2642A94E96400C49CA3 /* Pokemon+fixture.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11C3B2662A94E9CF00C49CA3 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				11C3B2672A94E9E800C49CA3 /* PokemonRepositoryDoubles.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C3B25E2A94E6E500C49CA3 /* Pokemon.swift in Sources */,
 				11C3B22D2A94E15C00C49CA3 /* ContentView.swift in Sources */,
 				11C3B22B2A94E15C00C49CA3 /* PokemonZukanApp.swift in Sources */,
+				11C3B2552A94E4F700C49CA3 /* ContentView+ViewModel.swift in Sources */,
+				11C3B2602A94E7DD00C49CA3 /* NetworkHttp.swift in Sources */,
+				11C3B25B2A94E64800C49CA3 /* DefaultPokemonRepository.swift in Sources */,
+				11C3B26A2A94EFFC00C49CA3 /* PageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +304,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11C3B23C2A94E15E00C49CA3 /* PokemonZukanTests.swift in Sources */,
+				11C3B23C2A94E15E00C49CA3 /* ContentVIewModelTests.swift in Sources */,
+				11C3B2652A94E96400C49CA3 /* Pokemon+fixture.swift in Sources */,
+				11C3B2682A94E9E800C49CA3 /* PokemonRepositoryDoubles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

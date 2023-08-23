@@ -4,7 +4,7 @@ import SwiftUI
 struct PokemonZukanApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: .init())
         }
     }
 }
