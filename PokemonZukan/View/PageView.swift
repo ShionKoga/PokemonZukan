@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PageView: View {
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
         List {
