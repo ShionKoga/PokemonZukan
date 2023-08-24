@@ -26,10 +26,12 @@ class PokemonRepositoryTests: XCTestCase {
         {
             "results": [
                 {
-                    "name": "bulbasaur"
+                    "name": "bulbasaur",
+                    "url": "https://pokeapi.co/api/v2/pokemon/1/"
                 },
                 {
-                    "name": "ivysaur"
+                    "name": "ivysaur",
+                    "url": "https://pokeapi.co/api/v2/pokemon/2/"
                 }
             ]
         }
@@ -42,8 +44,12 @@ class PokemonRepositoryTests: XCTestCase {
         let expectation = XCTestExpectation()
         repository.getPokemon(limit: 0, offset: 0)
             .sink(receiveCompletion: { _ in }) { pokemons in
+                XCTAssertEqual("1", pokemons.first?.id)
                 XCTAssertEqual("bulbasaur", pokemons.first?.name)
+                XCTAssertEqual("https://pokeapi.co/api/v2/pokemon/1/", pokemons.first?.url)
+                XCTAssertEqual("2", pokemons.last?.id)
                 XCTAssertEqual("ivysaur", pokemons.last?.name)
+                XCTAssertEqual("https://pokeapi.co/api/v2/pokemon/2/", pokemons.last?.url)
                 expectation.fulfill()
             }
             .store(in: &cancellables)

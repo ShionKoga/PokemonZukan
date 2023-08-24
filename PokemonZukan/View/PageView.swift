@@ -9,6 +9,7 @@ struct PageView: View {
                 PokemonRow(viewModel: .init(pokemon: pokemon))
             }
         }
+        .listStyle(.plain)
     }
 }
 

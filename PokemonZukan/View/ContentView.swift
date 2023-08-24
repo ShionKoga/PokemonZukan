@@ -4,49 +4,53 @@ struct ContentView: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        VStack {
-            pageController
-            
-            TabView(selection: $viewModel.selection) {
-                ForEach(viewModel.pages, id: \.self) { page in
-                    PageView(viewModel: .init(page: page))
+        NavigationStack {
+            VStack(spacing: 0) {
+                pageController
+                Divider()
+                
+                TabView(selection: $viewModel.selection) {
+                    ForEach(viewModel.pages, id: \.self) { page in
+                        PageView(viewModel: .init(page: page))
+                    }
                 }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .navigationTitle("pokemon")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     
     var pageController: some View {
-        HStack {
-            Button {
-                withAnimation {
-                    viewModel.prevPage()
+            HStack {
+                Spacer()
+                Button {
+                    withAnimation {
+                        viewModel.prevPage()
+                    }
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.title3).bold()
                 }
-            } label: {
-                Text("<")
-                    .font(.largeTitle)
-            }
-            .disabled(viewModel.prevButtonDisabled)
-            
-            Spacer()
-            
-            Text(viewModel.currentPageLabel)
-                .font(.largeTitle)
-            
-            Spacer()
-            
-            Button {
-                withAnimation {
-                    viewModel.nextPage()
+                .disabled(viewModel.prevButtonDisabled)
+                Spacer()
+                Text(viewModel.currentPageLabel)
+                    .font(.title3)
+                    .frame(width: 100)
+                Spacer()
+                Button {
+                    withAnimation {
+                        viewModel.nextPage()
+                    }
+                } label: {
+                    Image(systemName: "chevron.right")
+                        .font(.title3).bold()
                 }
-            } label: {
-                Text(">")
-                    .font(.largeTitle)
+                .disabled(viewModel.nextButtonDisabled)
+                Spacer()
             }
-            .disabled(viewModel.nextButtonDisabled)
+            .padding(.vertical, 10)
         }
-        .padding(.horizontal, 10)
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
